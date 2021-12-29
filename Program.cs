@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace DIO.Series
 {
@@ -14,7 +14,7 @@ namespace DIO.Series
 
             string opcaoUsuario = ObterOpcaoUsuario();
 
-            while (opcaoUsuario.ToUpper() != "X")
+            while (!string.Equals(opcaoUsuario, "X", StringComparison.OrdinalIgnoreCase))
             {
                 switch (opcaoUsuario)
                 {
@@ -107,7 +107,7 @@ namespace DIO.Series
             {
                 var excluido = serie.RetornaExcluido();
 
-                Console.WriteLine("#ID {0}: - {1} {2}", serie.RetornaId(), serie.RetornaTitulo(), (excluido ? "*Excluído*" : ""));
+                Console.WriteLine("#ID {0}: - {1} {2}", serie.RetornaId(), serie.RetornaTitulo(), excluido ? "*Excluído*" : "");
             }
         }
 
